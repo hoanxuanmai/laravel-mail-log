@@ -1,0 +1,40 @@
+{
+    "name": "hxm/laravel-mail-log",
+    "version": "0.1",
+    "description": "A Laravel Mail Logs",
+    "keywords": [
+        "mail-logs",
+        "email-logs",
+        "mail",
+        "email",
+        "logging",
+        "laravel",
+        "hxm"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mai Xuân Hoàn",
+            "email": "hoanxuanmai@gmail.com",
+            "role": "Creator & Designer"
+        }
+    ],
+    "require": {
+        "php": "^7.0|^8.0",
+        "laravel/framework": "^7.0|^8.0|^9.0|^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "HXM\\LaravelMailLog\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "HXM\\LaravelMailLog\\LaravelMailLogServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
