@@ -12,6 +12,7 @@ Able to store and provide:
 - Subject
 - Body
 - Status
+- Error
 
 
 ## Installation
@@ -21,9 +22,40 @@ Able to store and provide:
 composer require hxm/laravel-mail-log
 ```
 
-Run migrations to create database table:
+* Run migrations to create database table:
 ```bash
 php artisan migrate
+```
+* Publishing the config file
+```bash
+php artisan vendor:publish --tag=maillog
+```
+* This is the default content of the config file:
+
+```php
+return [
+    'send_message' => [
+        'save_error' => true, // enable save error to database,
+        'throw_exception' => true, //If set false, exceptions during email sending will not be thrown.
+    ],
+    'send_swift_message' => [
+        'save_error' => true, // enable save error to database,
+        'throw_exception' => false, //If set false, exceptions during email sending swift message will not be thrown.
+    ],
+    // route config
+    'route' => [
+        'enable' => true,
+        'domain' => null,
+        'middleware' => ['web'],
+        'prefix' => 'mail-logs',
+        'as' => 'mail-logs'
+    ],
+    //prune config
+    'prune' => [
+        'enable' => true,  
+        'days' => 30 //integer
+    ]
+];
 ```
 
 This package will automatically register the event listeners and data will be inserted into database.

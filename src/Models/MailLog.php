@@ -19,4 +19,9 @@ class MailLog extends Model
         'bcc' => 'array',
         'status' => 'bool',
     ];
+
+    function error()
+    {
+        return $this->hasOne(MailError::class, 'id', 'id');
+    }
 }

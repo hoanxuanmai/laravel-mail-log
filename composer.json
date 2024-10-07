@@ -1,10 +1,10 @@
 {
     "name": "hxm/laravel-mail-log",
-    "version": "0.1",
-    "description": "A Laravel Mail Logs",
+    "version": "0.1.1",
+    "description": "A Laravel Mail Log",
     "keywords": [
-        "mail-logs",
-        "email-logs",
+        "mail-log",
+        "email-log",
         "mail",
         "email",
         "logging",
@@ -31,7 +31,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "HXM\\LaravelMailLog\\LaravelMailLogServiceProvider"
+                "HXM\\LaravelMailLog\\Providers\\ServiceProvider",
+                "HXM\\LaravelMailLog\\Providers\\DeferrableServiceProvider"
             ]
         }
     },
